@@ -1,0 +1,23 @@
+{
+    "name": "Get PNG Image from spreadshirt",
+    "description" : "This is small extension for get PNG image from spreadshirt",
+    "version": "1.0",
+    "manifest_version": 2,
+    "icons": { "128": "icon.png" },
+    "permissions" : ["https://www.spreadshirt.com/*"],
+    "page_action" : {
+        "default_icon" : "icon.png"
+    },
+    "content_scripts" : [
+        {
+            "matches": ["https://www.spreadshirt.com/*"],
+            "js": ["jquery.js","content-script.js"],
+            "css" : ["content.css"],
+            "run_at": "document_end"
+        }
+    ],
+    "background" : {
+        "scripts": ["background.js"],
+        "persistent": false
+    }
+  }
